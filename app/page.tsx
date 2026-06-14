@@ -109,15 +109,13 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-2 gap-4">
-            <StatCard label="Temperatura"   value={latest.temperature.toFixed(1)} unit="°C"  color="#f97316" />
-            <StatCard label="Luz"           value={String(Math.round(latest.lux))} unit="lux" color="#eab308" />
-            <StatCard label="Humedad suelo" value={String(latest.soil_pct)}        unit="%"   color="#22c55e" />
-            <StatCard label="Presión"       value={latest.pressure.toFixed(0)}     unit="hPa" color="#60a5fa" />
+            <StatCard label="Temperatura" value={latest.temperature.toFixed(1)} unit="°C"  color="#f97316" />
+            <StatCard label="Luz"         value={String(Math.round(latest.lux))} unit="lux" color="#eab308" />
+            <StatCard label="Presión"     value={latest.pressure.toFixed(0)}     unit="hPa" color="#60a5fa" />
           </div>
 
           <Chart data={readings} dataKey="temperature" color="#f97316" label="Temperatura (°C)" unit="°C" />
           <Chart data={readings} dataKey="lux"         color="#eab308" label="Luz (lux)"        unit=""    />
-          <Chart data={readings} dataKey="soil_pct"    color="#22c55e" label="Humedad suelo (%)" unit="%"  />
 
           <p className="text-zinc-700 text-xs text-center">
             Última lectura: {new Date(latest.created_at).toLocaleString('es-ES')}
